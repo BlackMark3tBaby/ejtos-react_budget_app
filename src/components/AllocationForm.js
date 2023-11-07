@@ -2,8 +2,8 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
-const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);
+const AllocationForm = () => {
+    const { dispatch,remaining, currency  } = useContext(AppContext);
 
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
@@ -60,7 +60,7 @@ const AllocationForm = (props) => {
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
 
-                    <input
+                  <span style={{ "position":"relative","right":"-20px"}}> {currency} </span><input
                         required='required'
                         type='number'
                         id='cost'
